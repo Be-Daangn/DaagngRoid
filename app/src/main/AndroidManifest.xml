@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DaangnRoid">
+        <activity android:name=".presentation.recommendation.BookmarkActivity"></activity>
+        <activity android:name=".presentation.recommendation.RecommendationActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

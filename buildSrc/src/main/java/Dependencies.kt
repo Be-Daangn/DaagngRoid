@@ -24,6 +24,8 @@ object AndroidXDependencies {
     const val biometric = "androidx.biometric:biometric:${Versions.biometric_version}"
     const val kotlinxSerialization =
         "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinx_serialization_version}"
+    const val cardview = "androidx.cardview:cardview:1.0.0"
+
 }
 
 object TestDependencies {
