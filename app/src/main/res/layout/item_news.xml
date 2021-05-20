@@ -66,8 +66,7 @@
         app:layout_constraintStart_toStartOf="@id/tv_title"
         app:layout_constraintTop_toBottomOf="@+id/view_line"
         android:layout_marginTop="19dp"
-        android:text="<<6월 1일 GRAND OPEN>>\n\n안녕하세요 당근님들!\n오픈 기념 이벤트 행사를 진행합니다!\n\n인스타그램 : aynflower\n
-\n카카오 플러스친구 : 아인플라워\n\n전화 : 070 4151 0488"
+        android:text="6월 1일 GRAND OPEN\n\n안녕하세요 당근님들!\n오픈 기념 이벤트 행사를 진행합니다!\n\n인스타그램 : aynflower\n\n카카오 플러스친구 : 아인플라워\n\n전화 : 070 4151 0488"
         android:textSize="12sp"
         />
 
