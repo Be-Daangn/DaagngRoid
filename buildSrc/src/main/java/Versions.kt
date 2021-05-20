@@ -16,6 +16,7 @@ object Versions {
     const val security_version = "1.0.0"
     const val biometric_version = "1.1.0"
     const val kotlinx_serialization_version = "1.0.1"
+    const val cardview_version= "1.0.0"
 
     const val gradle_version = "4.2.0"
     const val ktlint_version = "10.0.0"
