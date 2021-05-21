@@ -1,121 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginHorizontal="40dp"
-    android:layout_marginVertical="43dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardview_recommend"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="40dp"
-        app:layout_constraintTop_toTopOf="parent">
+    <data>
 
-        <ImageView
-            android:id="@+id/img_recommend_list"
-            android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:src="@color/main"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.cardview.widget.CardView>
+        <variable
+            name="recommendData"
+            type="daangn.sopt.daangnroid.data.RecommendationInfo" />
+    </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_recommend_list_text"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintTop_toBottomOf="@id/cardview_recommend">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="43dp">
 
-        <TextView
-            android:id="@+id/tv_recommend_list_name"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_recommend"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="다운타우너"
-            android:textColor="@color/color_sub1"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/tv_recommend_review"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:cardCornerRadius="40dp"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tv_recommend_review"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            <ImageView
+                android:id="@+id/img_recommend_list"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:src="@{recommendData.img}"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_recommend_list_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="후기"
-            android:textColor="@color/main"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_recommend_list_name"
+            app:layout_constraintTop_toBottomOf="@id/cardview_recommend">
 
-            />
+            <TextView
+                android:id="@+id/tv_recommend_list_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{recommendData.name}"
+                android:textColor="@color/color_sub1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_recommend_review"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_recommend_review_cnt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="10dp"
-            android:text="89"
-            android:textColor="@color/main"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_recommend_review"
-            app:layout_constraintTop_toBottomOf="@id/tv_recommend_list_name"
+            <TextView
+                android:id="@+id/tv_recommend_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="10dp"
+                android:text="후기"
+                android:textColor="@color/main"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_recommend_list_name"
 
-            />
+                />
 
-        <TextView
-            android:id="@+id/tv_recommend_mania"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="6dp"
-            android:text="단골"
-            android:textColor="@color/color_sub2"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tv_recommend_review_cnt"
-            app:layout_constraintTop_toBottomOf="@id/tv_recommend_list_name"
+            <TextView
+                android:id="@+id/tv_recommend_review_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="10dp"
+                android:text="@{recommendData.reviewNumber}"
+                android:textColor="@color/main"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_recommend_review"
+                app:layout_constraintTop_toBottomOf="@id/tv_recommend_list_name"
 
-            />
+                />
 
-        <TextView
-            android:id="@+id/tv_recommend_mania_cnt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="6dp"
-            android:text="31"
-            android:textColor="@color/color_sub2"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tv_recommend_mania"
-            app:layout_constraintTop_toBottomOf="@id/tv_recommend_list_name"
+            <TextView
+                android:id="@+id/tv_recommend_mania"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="6dp"
+                android:text="단골"
+                android:textColor="@color/color_sub2"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/tv_recommend_review_cnt"
+                app:layout_constraintTop_toBottomOf="@id/tv_recommend_list_name"
 
-            />
+                />
 
-        <ImageView
-            android:id="@+id/iv_recommend_bookmark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="7dp"
-            android:src="@drawable/recommend_bookmark_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tv_recommend_mania_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="6dp"
+                android:text="@{recommendData.maniaNumber}"
+                android:textColor="@color/color_sub2"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/tv_recommend_mania"
+                app:layout_constraintTop_toBottomOf="@id/tv_recommend_list_name"
+
+                />
+
+            <ImageView
+                android:id="@+id/iv_recommend_bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="7dp"
+                android:src="@drawable/recommend_bookmark_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

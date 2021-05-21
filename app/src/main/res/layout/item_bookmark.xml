@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="bookmarkData"
+            type="daangn.sopt.daangnroid.data.BookmarkInfo" />
+    </data>
+
+
+<androidx.cardview.widget.CardView
     android:id="@+id/cardview_bookmark"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -20,7 +30,7 @@
             android:id="@+id/img_bookmark_list"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:src="@color/main"
+            android:src="@{bookmarkData.img}"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -30,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="4dp"
             android:layout_marginTop="13dp"
-            android:text="다운타우너"
+            android:text="@{bookmarkData.name}"
             android:textColor="@color/color_sub1"
             android:textSize="13sp"
             android:textStyle="bold"
@@ -44,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="13dp"
-            android:text="한남동"
+            android:text="@{bookmarkData.location}"
             android:textColor="@color/color_sub3"
             android:textSize="9sp"
             android:textStyle="bold"
@@ -66,3 +76,4 @@
 
 
 </androidx.cardview.widget.CardView>
+</layout>
