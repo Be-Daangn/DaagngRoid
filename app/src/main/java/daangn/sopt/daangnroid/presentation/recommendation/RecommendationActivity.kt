@@ -3,12 +3,15 @@ package daangn.sopt.daangnroid.presentation.recommendation
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import daangn.sopt.daangnroid.R
+import daangn.sopt.daangnroid.data.BookmarkInfo
 import daangn.sopt.daangnroid.data.RecommendationInfo
 import daangn.sopt.daangnroid.databinding.ActivityRecommendationBinding
 
 class RecommendationActivity : AppCompatActivity() {
 
+    private lateinit var recommendViewModel: RecommendViewModel
     private var _binding: ActivityRecommendationBinding? = null
     private val binding get() = _binding ?: error("binding 초기화 error")
 
@@ -19,6 +22,7 @@ class RecommendationActivity : AppCompatActivity() {
         _binding = ActivityRecommendationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        recommendViewModel = ViewModelProvider(this).get(RecommendViewModel::class.java)
         bookMarkClickEvent()
 
         setRecommendAdapter()
@@ -32,33 +36,19 @@ class RecommendationActivity : AppCompatActivity() {
     private fun setRecommendAdapter() {
         recommendListAdapter = RecommendListAdapter()
         binding.recycleRecommend.adapter = recommendListAdapter
+        recommendListAdapter.setStoryButtonClickListener {data, select ->
+            if(select) {
+                recommendViewModel.addBookmarkInfo(BookmarkInfo(data.img, data.name, data.location, true))
+            }
+            else {
+                //remove
+            }
+        }
     }
 
     private fun setRecommendListData() {
         recommendListAdapter.recommendList.addAll(
-            listOf<RecommendationInfo>(
-                RecommendationInfo(
-                    img = R.drawable.ic_recommend_img_1,
-                    name = "다운타우너",
-                    reviewNumber = "89",
-                    maniaNumber = "31",
-                    select = true
-                ),
-                RecommendationInfo(
-                    img = R.drawable.ic_recommend_img_2,
-                    name = "오복수산",
-                    reviewNumber = "75",
-                    maniaNumber = "24",
-                    select = false
-                ),
-                RecommendationInfo(
-                    img = R.drawable.ic_recommend_img_3,
-                    name = "파이프그라운",
-                    reviewNumber = "66",
-                    maniaNumber = "18",
-                    select = false
-                )
-            )
+            recommendViewModel.recommendMutablelist
         )
 
         recommendListAdapter.notifyDataSetChanged()

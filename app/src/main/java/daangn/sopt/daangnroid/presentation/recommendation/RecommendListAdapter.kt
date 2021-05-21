@@ -7,6 +7,7 @@ import daangn.sopt.daangnroid.data.RecommendationInfo
 import daangn.sopt.daangnroid.databinding.ItemRecommendationBinding
 
 class RecommendListAdapter : RecyclerView.Adapter<RecommendListAdapter.RecommendViewHolder>() {
+    private var storyButtonClickListener: ((RecommendationInfo, Boolean)-> Unit) ?= null
 
     val recommendList = mutableListOf<RecommendationInfo>()
 
@@ -19,17 +20,25 @@ class RecommendListAdapter : RecyclerView.Adapter<RecommendListAdapter.Recommend
         return RecommendViewHolder(binding)
     }
 
+    fun setStoryButtonClickListener(listener : (RecommendationInfo, Boolean)-> Unit) {
+        this.storyButtonClickListener = listener
+    }
+
     override fun getItemCount(): Int = recommendList.size
 
     override fun onBindViewHolder(holder: RecommendViewHolder, position: Int) {
         holder.onBind(recommendList[position])
     }
 
-    class RecommendViewHolder(
+    inner class RecommendViewHolder(
         private val binding: ItemRecommendationBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(recommendInfo: RecommendationInfo) {
             binding.recommendData = recommendInfo
+            binding.ivRecommendBookmark.setOnClickListener {
+                it.isSelected = !it.isSelected
+                storyButtonClickListener?.invoke(recommendInfo, it.isSelected)
+            }
         }
     }
 }

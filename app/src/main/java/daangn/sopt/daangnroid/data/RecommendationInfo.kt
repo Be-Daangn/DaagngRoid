@@ -5,5 +5,7 @@ data class RecommendationInfo(
     val name: String,
     val reviewNumber: String,
     val maniaNumber: String,
-    val select: Boolean
+    val location: String,
+    val select: Boolean,
+    val tag: String
 )
