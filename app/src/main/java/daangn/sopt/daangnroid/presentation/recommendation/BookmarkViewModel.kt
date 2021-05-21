@@ -11,22 +11,22 @@ class BookmarkViewModel : ViewModel() {
 
     val bookmarkMutablelist: MutableList<BookmarkInfo> = mutableListOf(
         BookmarkInfo(
-            img = R.drawable.ic_recommend_img_1,
+            img = R.drawable.recommend_1,
             name = "다운타우너",
             location = "한남동",
             select = true
         ),
         BookmarkInfo(
-            img = R.drawable.ic_recommend_img_2,
+            img = R.drawable.recommend_2,
             name = "오복수산",
             location = "연남동",
-            select = false
+            select = true
         ),
         BookmarkInfo(
-            img = R.drawable.ic_recommend_img_3,
+            img = R.drawable.recommend_3,
             name = "파이프그라운",
             location = "성수동",
-            select = false
+            select = true
         )
     )
 

@@ -8,13 +8,13 @@ import daangn.sopt.daangnroid.data.BookmarkInfo
 import daangn.sopt.daangnroid.data.RecommendationInfo
 
 class RecommendViewModel : ViewModel() {
-    private val _followerList = MutableLiveData<MutableList<BookmarkInfo>>()
-    val followerList: LiveData<MutableList<BookmarkInfo>>
-        get() = _followerList
+    private val _recommendStoreList = MutableLiveData<MutableList<BookmarkInfo>>()
+    val recommendStoreList: LiveData<MutableList<BookmarkInfo>>
+        get() = _recommendStoreList
 
     val recommendMutablelist: MutableList<RecommendationInfo> = mutableListOf(
         RecommendationInfo(
-            img = R.drawable.ic_recommend_img_1,
+            img = R.drawable.recommend_1,
             name = "다운타우너",
             reviewNumber = "89",
             maniaNumber = "31",
@@ -23,7 +23,7 @@ class RecommendViewModel : ViewModel() {
             tag = "맛집랭킹"
         ),
         RecommendationInfo(
-            img = R.drawable.ic_recommend_img_2,
+            img = R.drawable.recommend_2,
             name = "오복수산",
             reviewNumber = "75",
             maniaNumber = "24",
@@ -32,7 +32,7 @@ class RecommendViewModel : ViewModel() {
             tag = "일식"
         ),
         RecommendationInfo(
-            img = R.drawable.ic_recommend_img_3,
+            img = R.drawable.recommend_3,
             name = "파이프그라운",
             reviewNumber = "66",
             maniaNumber = "18",
@@ -43,6 +43,6 @@ class RecommendViewModel : ViewModel() {
     )
 
     fun addBookmarkInfo(bookmarkInfo: BookmarkInfo) {
-        followerList.value?.add(bookmarkInfo)
+        recommendStoreList.value?.add(bookmarkInfo)
     }
 }

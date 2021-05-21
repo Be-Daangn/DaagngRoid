@@ -26,8 +26,9 @@
             <ImageView
                 android:id="@+id/img_recommend_list"
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
-                android:src="@{recommendData.img}"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                app:imgResId="@{recommendData.img}"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.cardview.widget.CardView>
