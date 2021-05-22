@@ -69,12 +69,8 @@ class NewsActivity : AppCompatActivity() {
                     setTextColor(resources.getColor(R.color.chip_text_color, null))
                     isCheckable = true
                     isCheckedIconVisible = false
-                    chipIconTint = ColorStateList.valueOf(
-                        ContextCompat.getColor(
-                            this@NewsActivity,
-                            R.color.chip_background_color
-                        )
-                    )
+                    setTextColor(ContextCompat.getColorStateList(this@NewsActivity, R.color.chip_text_color))
+                    chipBackgroundColor = ContextCompat.getColorStateList(this@NewsActivity, R.color.chip_background_color)
                     setChipStrokeColorResource(R.color.white)
                     chipStrokeWidth = 1.0F
                     isChecked = false
