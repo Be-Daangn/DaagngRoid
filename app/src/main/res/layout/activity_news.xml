@@ -79,7 +79,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="소식"
-            android:background="@drawable/newschip_selector"/>
+            style="@style/CustomChipStyle"
+            app:chipStrokeColor="@color/white"
+            app:chipStrokeWidth="1dp"
+            />
 
     </com.google.android.material.chip.ChipGroup>
 
