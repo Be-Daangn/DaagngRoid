@@ -53,6 +53,9 @@ dependencies {
 
     // Hilt
     implementation(AndroidXDependencies.hilt)
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("com.google.android.material:material:1.3.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
     kapt(KaptDependencies.hilt)
 
     // DataStore
@@ -94,4 +97,7 @@ dependencies {
     testImplementation(TestDependencies.jUnit)
     androidTestImplementation(TestDependencies.androidTest)
     androidTestImplementation(TestDependencies.espresso)
+
+    //CardView
+    implementation(AndroidXDependencies.cardview)
 }
