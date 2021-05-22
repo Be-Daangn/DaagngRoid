@@ -17,5 +17,10 @@
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@drawable/chip_text_color</item>
     </style>
-
+    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+    </style>
 </resources>
