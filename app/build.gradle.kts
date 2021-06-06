@@ -56,6 +56,8 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.2.0")
     implementation("com.google.android.material:material:1.3.0")
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
     kapt(KaptDependencies.hilt)
 
     // DataStore
@@ -86,6 +88,7 @@ dependencies {
     // Retrofit
     implementation(ThirdPartyDependencies.retrofit)
     implementation(ThirdPartyDependencies.retrofitGsonConverter)
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.3.0")
 
     // Reactive Extensions(Rx)
     implementation(ThirdPartyDependencies.rxJava)

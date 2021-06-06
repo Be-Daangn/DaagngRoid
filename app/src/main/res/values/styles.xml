@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="CustomChipStyle" parent = "Widget.MaterialComponents.Chip.Choice">
-        <item name="android:textSize">13sp</item>
-        <item name="android:textColor">@drawable/chip_text_color</item>
-        <item name="chipBackgroundColor">@drawable/chip_background_color</item>
-    </style>
+<!--    <style name="CustomChipStyle" parent = "Widget.MaterialComponents.Chip.Choice">-->
+<!--        <item name="android:textSize">13sp</item>-->
+<!--        <item name="android:textColor">@drawable/chip_text_color</item>-->
+<!--        <item name="chipBackgroundColor">@drawable/chip_background_color</item>-->
+<!--    </style>-->
 </resources>
