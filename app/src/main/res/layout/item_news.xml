@@ -16,6 +16,7 @@
         app:cardCornerRadius="20dp"
         >
         <ImageView
+            android:id="@+id/iv_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/news_ex_flower"
@@ -61,9 +62,11 @@
 
     <TextView
         android:id="@+id/tv_description"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="45dp"
         app:layout_constraintTop_toBottomOf="@+id/view_line"
         android:layout_marginTop="19dp"
         android:text="6월 1일 GRAND OPEN\n\n안녕하세요 당근님들!\n오픈 기념 이벤트 행사를 진행합니다!\n\n인스타그램 : aynflower\n\n카카오 플러스친구 : 아인플라워\n\n전화 : 070 4151 0488"
